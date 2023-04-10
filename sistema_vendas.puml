@@ -1,35 +1,21 @@
-@startuml modelagem_dominio
-class Cliente {
-+nome: String
-+email: String
-+endereco: String
-+telefone: String
+@startuml
+left to right direction
+actor Cliente as c
+package Profissional {
+  actor "Supervisor de Alimentos" as sa
+  actor Chefe as ch
 }
-class Produto {
-+nome: String
-
-+descricao: String
-+preco: Double
-+quantidadeEstoque: int
+package Restaurante {
+  usecase "Comer alimento" as UC1
+  usecase "Pagar" as UC2
+  usecase "Beber" as UC3
+  usecase "Analisar alimento" as UC4
+  (UC1) .> (UC2) : include
+  (UC3) .> (UC2) : <<extends>>
 }
-class Pedido {
-+data: Date
-+valorTotal: Double
-+status: String
-}
-class ItemPedido {
-+quantidade: int
-+precoUnitario: Double
-+precoTotal: Double
-}
-class NotaFiscal {
-+numero: int
-+dataEmissao: Date
-+valorTotal: Double
-}
-Cliente "1" -- "0..*" Pedido : realiza
-Pedido "1" -- "1..*" ItemPedido : contém
-ItemPedido "0..*" -- "1" Produto : corresponde
-Vendedor "1" -- "0..*" Pedido : processa
-Pedido "1" -- "0..1" NotaFiscal : gera
+sa -- UC4
+c -- UC1
+c -- UC2
+c -- UC3
+sa <|-- ch
 @enduml
