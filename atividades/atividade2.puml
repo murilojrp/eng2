@@ -1,0 +1,63 @@
+' Exercício - Desenvolva o Modelo de
+' Domínio do estudo de caso a seguir:
+
+' Matrículas em Curso.
+
+' O aluno solicita informações ao
+' funcionário da empresa sobre quais
+' cursos a empresa oferece. Se o aluno se
+' interessar por algum curso, pedirá
+' informações a respeito de quais turmas
+' do curso em questão se encontram em
+' aberto, qual o horário em que as aulas
+' serão ministradas, qual a data prevista
+' para início das aulas. Caso o horário da
+' turma seja compatível com os horários do
+' aluno, este pode realizar a matrícula em
+' uma turma relativa ao curso em que se
+' interessou. Caso o aluno nunca tenha
+' feito nenhum curso na empresa e
+' portanto não esteja cadastrado, o aluno
+' deverá ser registrado antes de realizar a
+' matrícula.
+
+@startuml
+
+class Aluno {
+    +nome: String
+    +cpf: String
+    +telefone: String
+}
+
+class Funcionário {
+    +nome: String
+    +matrícula: String
+    +cargo: String
+}
+
+class Curso {
+    +nome: String
+    +descrição: String
+}
+
+class Turma {
+    +número: Integer
+    +horário: String
+    +dataInício: Date
+}
+
+class Matrícula {
+    +data: Date
+}
+
+Aluno "1" --> "0..*" Curso
+Aluno "1" --> "1" Matrícula
+Funcionário "1" --> "0..*" Curso
+Curso "1" --> "1..*" Turma
+Turma "0..*" --> "1" Curso
+Turma "0..*" --> "0..1" Matrícula
+Aluno --> Funcionário : Solicita informações
+Aluno --> Turma : Realiza matrícula
+Aluno "1" --> "0..1" Matrícula : Possui
+
+@enduml

@@ -1,0 +1,68 @@
+' Desenvolva o Modelo de Casos de Uso do Estudo de Caso a seguir:
+
+' Na empresa Nossa Saúde S.A., quando um funcionário solicita férias, deve preencher um
+' formulário, indicando, entre outras coisas, o período desejado, o qual é analisado pelo responsável
+' do R.H. O responsável analisa se o funcionário tem direito a férias, com base no tempo de trabalho,
+' faltas, etc. Pode haver algum impedimento, se sim, um comunicado com a negativa é entregue ao
+' solicitante. Caso o solicitante ocupe um cargo de chefia, ou faz parte de alguma comissão especial
+' da organização, será necessário enviar a solicitação para o 'Supervisor de autorização', que irá
+' definir sobre o pedido. Se o supervisor negar o pedido, um comunicado com a negativa é enviado ao
+' funcionário. Caso o pedido seja aprovado, ou caso a aprovação não seja necessária, o setor de R.H.
+' gera os trâmites administrativos necessários e comunica ao solicitante que a solicitação foi
+' aprovada.
+' Checklist:
+' 1-Identificar atores (participantes):
+' Funcionário, responsável do R.H., supervisor de autorização, setor de R.H.
+' 2-Identificar requisitos funcionais (casos de Uso):
+' Casos de uso: Solicitar férias, analisar solicitação, gerar trâmites administrativos, comunicar aprovação, comunicar negativa.
+' 3-Criar o modelo de casos de uso:
+
+
+
+@startuml Sistema
+left to right direction
+  actor "Funcionário" as sa
+  actor "Responsável do RH" as ch
+  actor "Supervisor de autorização" as sp
+  actor "Setor de RH" as sr
+
+rectangle Sistema {
+  usecase "Preencher formulario" as UC1
+  usecase "Analisar solicitacao" as UC2
+  usecase "Enviar comunicado de negativa" as UC3
+  usecase "Enviar solicitacao ao supervisor" as UC4
+  usecase "Negar pedido" as UC5
+  usecase "Gerar tramites administrativos" as UC6
+  usecase "Comunicar aprovacao" as UC7
+  usecase "Aprovar pedido" as UC8
+}
+sa -- UC1
+ch -- UC2
+ch -- UC3
+ch -- UC4
+sp -- UC5
+ch -- UC8
+sp -- UC8
+sr -- UC6
+sr -- UC7
+ch -- UC5
+UC1 -.> UC2 : include
+UC8 -.> UC6 : include
+UC6 -.> UC7 : include
+UC2 -.> UC8 : extend
+UC4 -.> UC8 : extend
+UC5 -.> UC3 : include
+UC2 -.> UC4 : extend
+UC4 -.> UC5 : extend
+
+@enduml
+
+
+' 4-Identificar os objetos - classes candidatas de análise (substantivos) e atributos;
+' Funcionário, responsável do R.H., supervisor de autorização, setor de R.H., solicitação de férias, período solicitado, cargo de chefia, comissão especial, supervisor de autorização, período solicitado, funcionário, direito a férias, trâmites administrativos, solicitante.
+' 5-Criar o modelo de domínio (diagrama 2), com:
+' a) classes;
+' b) atributos;
+' c) associações;
+' d) nomes de associações;
+' e) multiplicidades;

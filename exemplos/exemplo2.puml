@@ -1,0 +1,35 @@
+@startuml modelagem_dominio
+class Cliente {
++nome: String
++email: String
++endereco: String
++telefone: String
+}
+class Produto {
++nome: String
+
++descricao: String
++preco: Double
++quantidadeEstoque: int
+}
+class Pedido {
++data: Date
++valorTotal: Double
++status: String
+}
+class ItemPedido {
++quantidade: int
++precoUnitario: Double
++precoTotal: Double
+}
+class NotaFiscal {
++numero: int
++dataEmissao: Date
++valorTotal: Double
+}
+Cliente "1" -- "0..*" Pedido : realiza
+Pedido "1" -- "1..*" ItemPedido : contém
+ItemPedido "0..*" -- "1" Produto : corresponde
+Vendedor "1" -- "0..*" Pedido : processa
+Pedido "1" -- "0..1" NotaFiscal : gera
+@enduml

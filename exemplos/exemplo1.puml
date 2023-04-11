@@ -1,0 +1,17 @@
+@startuml casos_de_uso
+actor Cliente
+actor Vendedor
+package "Sistema de Vendas" {
+
+usecase UC1 "Fazer Pedido"
+usecase UC2 "Consultar Estoque"
+usecase UC3 "Cadastrar Cliente"
+usecase UC4 "Emitir Nota Fiscal"
+}
+Cliente --> UC1 : Solicita
+Cliente --> UC2 : Consulta
+Vendedor --> UC3 : Cadastra
+Vendedor --> UC1 : Processa
+Vendedor --> UC2 : Consulta
+Vendedor --> UC4 : Emite
+@enduml
