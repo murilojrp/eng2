@@ -31,7 +31,7 @@ package "Sistema de Fabricação de Concreto" {
   usecase "Entregar ordem de Pedido" as UC1
   usecase "Preencher ordem de Pedido" as UC2
   usecase "Escalonar ordem" as UC3
-  usecase "Encaminhar a indústria para o encarregado de produção" as UC4
+  usecase "Encaminhar à indústria para o encarregado de produção" as UC4
   usecase "Executar Pedido" as UC5
   usecase "Solicitar Materiais" as UC6
   usecase "Entregar Materiais" as UC7
