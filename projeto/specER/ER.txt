@@ -4,6 +4,8 @@
   R3 - Controlar a matéria prima
   R4 - Controlar a entrega de concreto
   R5 - Controlar as compras de matéria prima
+  R6 - Gerenciamento de pedidos
+  R7 - Gerenciamento de produções
 
 2 - Descrição Textual:
   Estudo de Caso
