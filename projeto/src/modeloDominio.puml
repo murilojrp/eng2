@@ -25,6 +25,8 @@ class Funcionário {
   +cargo: String
   +departamento: String 
   +telefone: String
+  +salário: Double
+  +dataContratação: Date
 }
 
 class Cliente {
@@ -32,16 +34,19 @@ class Cliente {
   +cnpj: String
   +email: String
   +telefone: String
+  +endereço: String
 }
 
 class Pedido {
   +número: Integer
   +data: Date
-  +cliente: String
-  +representante: String
+  +cliente: Cliente
+  +representante: Funcionário
   +status: String
   +quantidade: Integer
   +unidadeDeMedida: String
+  +tipoConcreto: String
+  +endereçoEntrega: String
 }
 
 class "Matéria Prima" {
@@ -51,5 +56,6 @@ class "Matéria Prima" {
 
 Cliente "1" ..> "1" Pedido :Realiza
 Funcionário "1" ..> "1" Pedido :Providencia
+Pedido "1" ..> "1" "Matéria Prima" :Requer
 
 @enduml

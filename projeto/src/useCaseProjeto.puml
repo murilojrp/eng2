@@ -11,39 +11,40 @@
 ' ' Após a fabricação, o produto é entregue na construção e o cliente efetua o pagamento que é recebido pelo departamento financeiro da indústria.
 
 @startuml
+
 left to right direction
 
 title = Fabrica de Concreto
-  actor "Clientes" as cl
-  actor "Representante" as rep
-  actor "Transportadora" as trans
-  actor "Departamento de Vendas" as dv
-  actor "Encarregado de Produção" as ep
-  actor "Operador de Máquinas" as oma
-  actor "Operário de Mistura" as omi
-  actor "Encarregado de Controle de Fluxo de Trabalho" as ea
-  actor "Encarregado do Almoxarifado e Estocagem" as eae
-  actor "Setor de Recebimento e Distribuição" as rd
-  actor "Departamento Financeiro" as df
-  actor "Departamento de Compras" as dc
+actor "Clientes" as cl
+actor "Representante" as rep
+actor "Transportadora" as trans
+actor "Departamento de Vendas" as dv
+actor "Encarregado de Produção" as ep
+actor "Operador de Máquinas" as oma
+actor "Operário de Mistura" as omi
+actor "Encarregado de Controle de Fluxo de Trabalho" as ea
+actor "Encarregado do Almoxarifado e Estocagem" as eae
+actor "Setor de Recebimento e Distribuição" as rd
+actor "Departamento Financeiro" as df
+actor "Departamento de Compras" as dc
 
 package "Sistema de Fabricação de Concreto" {
-  usecase "Entregar ordem de Pedido" as UC1
-  usecase "Preencher ordem de Pedido" as UC2
-  usecase "Escalonar ordem" as UC3
-  usecase "Encaminhar à indústria para o encarregado de produção" as UC4
+  usecase "Entregar Ordem de Pedido" as UC1
+  usecase "Preencher Ordem de Pedido" as UC2
+  usecase "Escalonar Ordem" as UC3
+  usecase "Encaminhar à Produção" as UC4
   usecase "Executar Pedido" as UC5
   usecase "Solicitar Materiais" as UC6
   usecase "Entregar Materiais" as UC7
-  usecase "Executar controles de fabricação" as UC8
-  usecase "Misturar componentes" as UC9
-  usecase "Controlar o fluxo do trabalho" as UC10
-  usecase "Emitir ordem de pedido de mercadoria" as UC11
-  usecase "Providenciar o pedido" as UC12
-  usecase "Verificar se está entregue conforme foi feito o pedido" as UC13
-  usecase "Entregar produto na construção" as UC14
-  usecase "Efetuar pagamento" as UC15
-  usecase "Receber pagamento" as UC16  
+  usecase "Executar Controles de Fabricação" as UC8
+  usecase "Misturar Componentes" as UC9
+  usecase "Controlar Fluxo do Trabalho" as UC10
+  usecase "Emitir Ordem de Compra" as UC11
+  usecase "Providenciar o Pedido" as UC12
+  usecase "Verificar Entrega" as UC13
+  usecase "Entregar Produto" as UC14
+  usecase "Efetuar Pagamento" as UC15
+  usecase "Receber Pagamento" as UC16  
 }
 
 rep -- UC1
@@ -63,7 +64,7 @@ trans -- UC14
 cl -- UC15
 df -- UC16
 
-UC1 -.> UC2 : <<include>>
+UC1 -.> UC2 : <<extend>>
 UC2 -.> UC3 : <<include>>
 UC3 -.> UC4 : <<include>>
 UC4 -.> UC5 : <<include>>

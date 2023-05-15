@@ -1,0 +1,67 @@
+Casos de Uso Expandido: Registrar Cliente e Registrar Pedido
+
+Caso de Uso 1: Registrar Cliente
+Ator Principal: Cliente
+Descrição: O cliente realiza o registro no sistema para poder acessar as funcionalidades.
+
+Requisitos do Sistema:
+    RS1: O sistema deve permitir o registro de novos clientes.
+
+Funções Básicas:
+    FB1: Coletar informações do cliente.
+    FB2: Validar informações do cliente.
+    FB3: Armazenar informações do cliente.
+
+Pré-condições: Nenhuma.
+
+Fluxo Principal:
+
+███████████████████████████████████████████████████████████████████████████████
+█            Ação do Ator              █        Resposta do Sistema           █
+█--------------------------------------█--------------------------------------█
+█ 1. O cliente acessa a funcionalidade █  2. O Sistema exibe o formulário de  █
+█    de registro de cliente.           █    registro, solicitando informações █
+█                                      █    pessoais do cliente.              █
+█--------------------------------------█--------------------------------------█
+█ 3. O cliente preenche o formulário   █  4. O Sistema valida as informações  █
+█    com seus dados pessoais.          █    fornecidas pelo cliente.          █
+█                                      █                                      █
+█                                      █                                      █
+███████████████████████████████████████████████████████████████████████████████
+
+Caso de Uso 2: Registrar Pedido de Concreto
+Ator Principal: Cliente
+Outros Atores: Departamento de Vendas
+Descrição: O cliente registra um pedido de concreto para entrega em um ou mais dias.
+
+Requisitos do Sistema:
+    RS1: O sistema deve permitir que os clientes realizem pedidos de concreto.
+    RS2: O sistema deve permitir que o Departamento de Vendas receba os pedidos de concreto registrados pelos clientes.
+
+Funções Básicas:
+    FB1: Exibir formulário de registro de pedido.
+    FB2: Coletar informações do pedido.
+    FB3: Validar informações do pedido.
+    FB4: Escalonar pedido de concreto.
+
+Pré-condições: O cliente precisa estar registrado no sistema.
+
+Fluxo Principal:
+
+███████████████████████████████████████████████████████████████████████████████
+█            Ação do Ator              █        Resposta do Sistema           █
+█--------------------------------------█--------------------------------------█
+█ 1. O cliente acessa a funcionalidade █  2. O Sistema exibe o formulário de  █
+█    de registro de pedido de concreto.█    registro de pedido de concreto.   █
+█                                      █                                      █
+█                                      █                                      █
+█--------------------------------------█--------------------------------------█
+█ 3. O cliente preenche o formulário   █  4. O Sistema valida as informações  █
+█    com as especificações do pedido   █    fornecidas pelo cliente.          █
+█    de concreto.                      █                                      █
+█                                      █                                      █
+█--------------------------------------█--------------------------------------█
+█ 5. O cliente envia o pedido de       █  6. O Sistema recebe e armazena o    █
+█    concreto para o sistema.          █    pedido de concreto.               █
+█                                      █                                      █
+███████████████████████████████████████████████████████████████████████████████
