@@ -1,18 +1,22 @@
-Casos de Uso Expandido: Registrar Cliente e Registrar Pedido
+Casos de Uso Expandido: Preencher Ordem de Pedido e Entregar Pedido
 
-Caso de Uso 1: Registrar Cliente
+Caso de Uso 1: Preencher Ordem de Pedido
 Ator Principal: Cliente
-Descrição: O cliente realiza o registro no sistema para poder acessar as funcionalidades.
+Outros Atores: Departamento de Vendas
+Descrição: O cliente envia um pedido de concreto para o sistema.
 
 Requisitos do Sistema:
-    RS1: O sistema deve permitir o registro de novos clientes.
+    RS1: O sistema deve permitir que os clientes realizem pedidos de concreto.
+    RS2: O sistema deve permitir que os clientes se registrem no sistema.
+    RS3: O sistema deve permitir que o Departamento de Vendas receba os pedidos de concreto registrados pelos clientes.
 
 Funções Básicas:
-    FB1: Coletar informações do cliente.
-    FB2: Validar informações do cliente.
-    FB3: Armazenar informações do cliente.
+    FB1: Exibir formulário de registro.
+    FB2: Coletar informações do cliente.
+    FB3: Validar informações do cliente.
+    FB4: Armazenar informações do cliente.
 
-Pré-condições: Nenhuma.
+Pré-condições: O cliente precisa estar registrado no sistema.
 
 Fluxo Principal:
 
@@ -29,39 +33,44 @@ Fluxo Principal:
 █                                      █                                      █
 ███████████████████████████████████████████████████████████████████████████████
 
-Caso de Uso 2: Registrar Pedido de Concreto
-Ator Principal: Cliente
+Ação do Ator: O cliente acessa o sistema com seu login e senha.
+Resposta do Sistema: O Sistema valida as informações fornecidas pelo cliente.
+Resposta do Sistema: O Sistema libera o acesso para o cliente.
+Ação do Ator: O Cliente acessa a funcionalidade de envio de pedido de concreto.
+Resposta do Sistema: O Sistema exibe o formulário de registro de pedido de concreto.
+Ação do Ator: O cliente preenche o formulário com as especificações do pedido de concreto.
+Resposta do Sistema: O Sistema valida as informações fornecidas pelo cliente.
+Ação do Ator: O cliente envia o pedido de concreto para o sistema.
+Resposta do Sistema: O Sistema recebe e armazena o pedido de concreto.
+
+
+Caso de Uso Expandido: Entregar Pedido
+
+Caso de Uso: Transportadora Entregar Pedido
+Ator Principal: Transportadora
 Outros Atores: Departamento de Vendas
-Descrição: O cliente registra um pedido de concreto para entrega em um ou mais dias.
+Descrição: A transportadora entrega o pedido de concreto para o cliente.
 
 Requisitos do Sistema:
-    RS1: O sistema deve permitir que os clientes realizem pedidos de concreto.
-    RS2: O sistema deve permitir que o Departamento de Vendas receba os pedidos de concreto registrados pelos clientes.
+RS1: O sistema deve permitir que as transportadoras recebam os pedidos de concreto registrados pelos clientes.
+RS2: O sistema deve permitir que as transportadoras entreguem os pedidos de concreto para os clientes.
+RS3: O sistema deve permitir o agendamento e acompanhamento das entregas dos pedidos de concreto.
+RS4: O sistema deve permitir a comunicação entre a transportadora e o Departamento de Vendas.
 
 Funções Básicas:
-    FB1: Exibir formulário de registro de pedido.
-    FB2: Coletar informações do pedido.
-    FB3: Validar informações do pedido.
-    FB4: Escalonar pedido de concreto.
+FB5: Agendar entrega do pedido.
+FB6: Registrar informações de entrega.
+FB7: Notificar Departamento de Vendas sobre o status da entrega.
 
-Pré-condições: O cliente precisa estar registrado no sistema.
+Pré-condições: O pedido de concreto precisa ter sido preenchido e registrado no sistema.
 
-Fluxo Principal:
-
-███████████████████████████████████████████████████████████████████████████████
-█            Ação do Ator              █        Resposta do Sistema           █
-█--------------------------------------█--------------------------------------█
-█ 1. O cliente acessa a funcionalidade █  2. O Sistema exibe o formulário de  █
-█    de registro de pedido de concreto.█    registro de pedido de concreto.   █
-█                                      █                                      █
-█                                      █                                      █
-█--------------------------------------█--------------------------------------█
-█ 3. O cliente preenche o formulário   █  4. O Sistema valida as informações  █
-█    com as especificações do pedido   █    fornecidas pelo cliente.          █
-█    de concreto.                      █                                      █
-█                                      █                                      █
-█--------------------------------------█--------------------------------------█
-█ 5. O cliente envia o pedido de       █  6. O Sistema recebe e armazena o    █
-█    concreto para o sistema.          █    pedido de concreto.               █
-█                                      █                                      █
-███████████████████████████████████████████████████████████████████████████████
+Ação do Ator: A Transportadora recebe o pedido de entrega do Departamento de Vendas.
+Resposta do Sistema: O Sistema exibe as informações do pedido de entrega.
+Ação do Ator: A Transportadora agenda a entrega do pedido de concreto com o cliente.
+Resposta do Sistema: O Sistema registra o agendamento da entrega.
+Ação do Ator: A Transportadora realiza a entrega do pedido de concreto no endereço especificado.
+Resposta do Sistema: O Sistema registra as informações de entrega, como data e horário.
+Ação do Ator: A Transportadora informa ao Sistema o status da entrega.
+Resposta do Sistema: O Sistema atualiza o status da entrega no sistema.
+Ação do Ator: A Transportadora notifica o Departamento de Vendas sobre o status da entrega.
+Resposta do Sistema: O Sistema registra a notificação do Departamento de Vendas.

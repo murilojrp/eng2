@@ -12,9 +12,10 @@
 
 @startuml
 
-left to right direction
+top to bottom direction
 
-title = Fabrica de Concreto
+title = Fábrica de Concreto
+
 actor "Clientes" as cl
 actor "Representante" as rep
 actor "Transportadora" as trans
@@ -28,10 +29,10 @@ actor "Setor de Recebimento e Distribuição" as rd
 actor "Departamento Financeiro" as df
 actor "Departamento de Compras" as dc
 
-package "Sistema de Fabricação de Concreto" {
+rectangle "Sistema de Fabricação de Concreto" {
   usecase "Entregar Ordem de Pedido" as UC1
   usecase "Preencher Ordem de Pedido" as UC2
-  usecase "Escalonar Ordem" as UC3
+  usecase "Escalonar Ordem dos Pedidos" as UC3
   usecase "Encaminhar à Produção" as UC4
   usecase "Executar Pedido" as UC5
   usecase "Solicitar Materiais" as UC6
@@ -64,21 +65,21 @@ trans -- UC14
 cl -- UC15
 df -- UC16
 
-UC1 -.> UC2 : <<extend>>
-UC2 -.> UC3 : <<include>>
-UC3 -.> UC4 : <<include>>
-UC4 -.> UC5 : <<include>>
-UC5 -.> UC6 : <<include>>
-UC6 -.> UC7 : <<include>>
-UC7 -.> UC8 : <<include>>
-UC8 -.> UC9 : <<include>>
-UC9 -.> UC10 : <<include>>
-UC10 -.> UC11 : <<extend>>
-UC11 -.> UC12 : <<include>>
-UC12 -.> UC13 : <<include>>
-UC13 -.> UC14 : <<include>>
-UC10 -.> UC14 : <<include>>
-UC14 -.> UC15 : <<include>>
-UC15 -.> UC16 : <<include>>
+UC1 <.- UC2 : <<extend>>
+UC2 <.- UC3 : <<include>>
+UC3 <.- UC4 : <<include>>
+UC4 <.- UC5 : <<include>>
+UC5 <.- UC6 : <<include>>
+UC6 <.- UC7 : <<include>>
+UC7 <.- UC8 : <<include>>
+UC8 <.- UC9 : <<include>>
+UC9 <.- UC10 : <<include>>
+UC10 <.- UC11 : <<extend>>
+UC11 <.- UC12 : <<include>>
+UC12 <.- UC13 : <<include>>
+UC13 <.- UC14 : <<include>>
+UC10 <.- UC14 : <<include>>
+UC14 <.- UC15 : <<include>>
+UC15 <.- UC16 : <<include>>
 
 @enduml
