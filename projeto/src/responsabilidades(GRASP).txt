@@ -1,0 +1,27 @@
+    Controlador (Controller):
+
+    ControladorPedido: Responsável por receber e coordenar as solicitações relacionadas a pedidos, como realizar um novo pedido, aprovar ou cancelar um pedido, e atualizar o status do pedido.
+
+    Criador (Creator):
+
+    CriadorPedido: Responsável por criar instâncias da classe Pedido quando um cliente realiza um pedido.
+
+    Especialista em Informação (Information Expert):
+
+    Pedido: Responsável por manter as informações relacionadas a um pedido, como número, data, cliente, representante, status, quantidade, tipo de concreto e endereço de entrega. O Pedido possui métodos para aprovar, cancelar e atualizar o status.
+
+    Controlador de Interface (Interface Controller):
+
+    ControladorInterfaceCliente: Responsável por controlar a interação entre a interface do cliente e as classes relacionadas a clientes, como realizar um pedido.
+
+    Polimorfismo (Polymorphism):
+
+    Produto: Pode ser uma classe base abstrata que define métodos comuns para operações de estoque, como verificarEstoque. Classes derivadas, como MatériaPrima, implementam esses métodos de acordo com suas particularidades.
+
+    Indireção (Indirection):
+
+    Almoxarifado: Classe intermediária que atua como um ponto de acesso ao estoque de Matéria Prima. Ela recebe solicitações de requisição de materiais e atualiza o estoque.
+
+    Especialista em Informação em Controle de Fluxo (Information Expert in Control Flow):
+
+    Indústria: Responsável por coordenar o fluxo de trabalho na produção de concreto, recebendo as ordens de produção, solicitando materiais ao Almoxarifado, controlando a execução da ordem de produção e verificando a qualidade do concreto produzido.

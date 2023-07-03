@@ -1,0 +1,24 @@
+@startuml
+
+actor "Cliente"
+actor "Representante"
+actor "Departamento de Vendas"
+actor "Encarregado de Produção"
+actor "Encarregado do Almoxarifado"
+actor "Setor de Recebimento e Distribuição"
+actor "Departamento Financeiro"
+
+participant "FábricaDeConcreto"
+
+"Cliente" -> "Representante": Preencher Ordem de Pedido
+"Representante" -> "Departamento de Vendas": Encaminhar Ordem de Pedido
+"Departamento de Vendas" -> "FábricaDeConcreto": Escalonar Ordem de Pedido
+"FábricaDeConcreto" -> "Encarregado de Produção": Providenciar Execução do Pedido
+"Encarregado de Produção" -> "Encarregado do Almoxarifado": Requisitar Materiais
+"Encarregado do Almoxarifado" -> "Setor de Recebimento e Distribuição": Entregar Materiais
+"Setor de Recebimento e Distribuição" -> "Encarregado de Produção": Verificar Entrega dos Materiais
+"Encarregado de Produção" -> "FábricaDeConcreto": Executar Controles de Fabricação e Mistura dos Componentes
+"FábricaDeConcreto" -> "Cliente": Entregar Produto
+"Cliente" -> "Departamento Financeiro": Efetuar Pagamento
+
+@enduml

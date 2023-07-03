@@ -1,0 +1,76 @@
+@startuml
+
+class Funcionário {
+  +nome: String
+  +cpf: String
+  +departamento: String 
+  +telefone: String
+  +salário: Double
+  +dataContratação: Date
+  +realizarTarefa(): void
+  +calcularSalário(): Double
+}
+
+class Transportadora {
+  +nome: String
+  +cnpj: String
+  +telefone: String
+  +endereço: String
+  +entregarPedido(pedido: Pedido): void
+}
+
+class Vendedor {
+  +comissãoPorVenda: Double
+  +realizarTarefa(): void
+  +calcularSalário(): Double
+}
+
+Funcionário <|-- Vendedor
+
+
+class Cliente {
+  +descrição: String
+  +cnpj: String
+  +email: String
+  +telefone: String
+  +endereço: String
+  +realizarPedido(pedido: Pedido): void
+}
+
+class Pedido {
+  +número: Integer
+  +data: Date
+  +cliente: Cliente
+  +representante: Funcionário
+  +status: String
+  +quantidade: Integer
+  +unidadeDeMedida: String
+  +tipoConcreto: String
+  +endereçoEntrega: String
+  +aprovarPedido(): void
+  +cancelarPedido(): void
+  +atualizarStatus(status: String): void
+}
+
+class "Matéria Prima" {
+  +descrição: String
+  +estoque: Integer
+  +requisitarMateriais(): void
+  +atualizarEstoque(quantidade: Integer): void
+}
+
+class Produto {
+  +descrição: String
+  +estoque: Integer
+  +verificarEstoque(): Integer
+}
+
+Cliente "1" ..> "0..*" Pedido :Realiza
+Vendedor "1" ..> "0..*" Pedido :Providencia
+Produto "1..*" ..> "1" "Matéria Prima" :Requer
+Pedido "1" ..> "1" Produto :Possui
+Transportadora "1" ..> "0..*" Pedido :Entrega
+
+@enduml
+
+

@@ -1,0 +1,89 @@
+Contrato
+Nome: preencherOrdemDePedido()
+Responsabilidades: Registrar o preenchimento de uma ordem de pedido pelo cliente.
+Tipo: Sistema
+Refs cruzadas: Função do sistema: R6
+Caso de Uso: Preencher Ordem de Pedido
+Pré-condições: Nenhuma
+Pós-condições: Uma ordem de pedido foi preenchida e registrada no sistema.
+
+Contrato
+Nome: encaminharOrdemDePedido()
+Responsabilidades: Encaminhar a ordem de pedido preenchida pelo representante ao departamento de vendas.
+Tipo: Sistema
+Refs cruzadas: Função do sistema: R6
+Caso de Uso: Encaminhar Ordem de Pedido
+Pré-condições: Uma ordem de pedido foi preenchida e registrada no sistema.
+Pós-condições: A ordem de pedido foi encaminhada ao departamento de vendas.
+
+Contrato
+Nome: escalonarOrdemDePedido()
+Responsabilidades: Escalonar a ordem de pedido recebida pelo departamento de vendas para a fábrica de concreto.
+Tipo: Sistema
+Refs cruzadas: Função do sistema: R7
+Caso de Uso: Escalonar Ordem de Pedido
+Pré-condições: A ordem de pedido foi encaminhada ao departamento de vendas.
+Pós-condições: A ordem de pedido foi escalonada para a fábrica de concreto.
+
+Contrato
+Nome: providenciarExecucaoDoPedido()
+Responsabilidades: Providenciar a execução do pedido na fábrica de concreto pelo encarregado de produção.
+Tipo: Sistema
+Refs cruzadas: Função do sistema: R7
+Caso de Uso: Providenciar Execução do Pedido
+Pré-condições: A ordem de pedido foi escalonada para a fábrica de concreto.
+Pós-condições: O encarregado de produção está pronto para executar o pedido.
+
+Contrato
+Nome: requisitarMateriais()
+Responsabilidades: Requisitar os materiais necessários para o pedido pelo encarregado do almoxarifado.
+Tipo: Sistema
+Refs cruzadas: Função do sistema: R3, R5
+Caso de Uso: Requisitar Materiais
+Pré-condições: O encarregado de produção está pronto para executar o pedido.
+Pós-condições: Os materiais necessários foram requisitados pelo encarregado do almoxarifado.
+
+Contrato
+Nome: entregarMateriais()
+Responsabilidades: Entregar os materiais requisitados pelo setor de recebimento e distribuição.
+Tipo: Sistema
+Refs cruzadas: Função do sistema: R4
+Caso de Uso: Entregar Materiais
+Pré-condições: Os materiais necessários foram requisitados pelo encarregado do almoxarifado.
+Pós-condições: Os materiais foram entregues pelo setor de recebimento e distribuição.
+
+Contrato
+Nome: verificarEntregaDosMateriais()
+Responsabilidades: Verificar a entrega dos materiais pelo encarregado de produção.
+Tipo: Sistema
+Refs cruzadas: Função do sistema: R4
+Caso de Uso: Verificar Entrega dos Materiais
+Pré-condições: Os materiais foram entregues pelo setor de recebimento e distribuição.
+Pós-condições: A entrega dos materiais foi verificada pelo encarregado de produção.
+
+Contrato
+Nome: executarControlesDeFabricacao()
+Responsabilidades: Executar os controles de fabricação e mistura dos componentes na fábrica de concreto.
+Tipo: Sistema
+Refs cruzadas: Função do sistema: R1, R7, R9
+Caso de Uso: Executar Controles de Fabricação e Mistura dos Componentes
+Pré-condições: A entrega dos materiais foi verificada pelo encarregado de produção.
+Pós-condições: Os controles de fabricação e mistura dos componentes foram executados na fábrica de concreto.
+
+Contrato
+Nome: entregarProduto()
+Responsabilidades: Entregar o produto ao cliente pela fábrica de concreto.
+Tipo: Sistema
+Refs cruzadas: Função do sistema: R4
+Caso de Uso: Entregar Produto
+Pré-condições: Os controles de fabricação e mistura dos componentes foram executados na fábrica de concreto.
+Pós-condições: O produto foi entregue ao cliente.
+
+Contrato
+Nome: efetuarPagamento()
+Responsabilidades: Efetuar o pagamento pelo cliente ao departamento financeiro.
+Tipo: Sistema
+Refs cruzadas: Função do sistema: R11
+Caso de Uso: Efetuar Pagamento
+Pré-condições: O produto foi entregue ao cliente.
+Pós-condições: O pagamento foi efetuado pelo cliente.

@@ -1,0 +1,19 @@
+@startuml
+
+start
+
+:Receber Ordem de Pedido;
+:Escalonar Ordem de Pedido;
+:Encaminhar à Produção;
+:Preparar Materiais e Equipamentos;
+:Executar Controles de Fabricação e Mistura dos Componentes;
+:Verificar Nível de Estoque;
+:Requisitar Compra de Matéria-prima;
+:Receber Materiais do Almoxarifado;
+:Verificar Entrega dos Materiais;
+:Entregar Produto ao Cliente;
+:Receber Pagamento;
+
+stop
+
+@enduml
